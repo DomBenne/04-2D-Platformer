@@ -65,6 +65,9 @@ func is_on_right_wall():
 		return true
 	return false
 
+func do_damage(d):
+	queue_free()
+
 func is_on_left_wall():
 	if $Wall/Right.is_colliding():
 		return true

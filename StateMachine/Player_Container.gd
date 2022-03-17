@@ -8,4 +8,5 @@ func _physics_process(_delta):
 	if not has_node("Player"):
 		var player = Player.instance()
 		player.position = starting_position
+		player.name = "Player"
 		add_child(player)
