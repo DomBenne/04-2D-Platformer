@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Game Over.gd" type="Script" id=1]
+[ext_resource path="res://Assets/parallax-01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/parallax-02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/parallax-00.png" type="Texture" id=4]
+
+[node name="Game Over" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 299.5 )
+scale = Vector2( 0.718056, 1.66944 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 519, 299.5 )
+scale = Vector2( 0.709722, 1.66944 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 512, 299.5 )
+scale = Vector2( 0.715278, 1.66944 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 1024.0
+margin_bottom = 400.0
+text = "Game Over, 
+would you like to play again?!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play_again" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 330.0
+margin_right = 612.0
+margin_bottom = 366.0
+text = "Play Again?"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 380.0
+margin_right = 612.0
+margin_bottom = 416.0
+text = "Quit"
+
+[connection signal="pressed" from="Play_again" to="." method="_on_Play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

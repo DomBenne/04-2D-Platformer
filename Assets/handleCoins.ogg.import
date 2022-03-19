@@ -11,5 +11,5 @@ dest_files=[ "res://.import/handleCoins.ogg-ba3f85ba250923903e8ce8e1281575fa.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

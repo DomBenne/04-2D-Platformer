@@ -10,3 +10,11 @@ func _physics_process(_delta):
 		player.position = starting_position
 		player.name = "Player"
 		add_child(player)
+
+
+
+func spawn(p):
+	var player = Player.instanced()
+	player.position = p
+	player.name = "Player"
+	add_child(player)

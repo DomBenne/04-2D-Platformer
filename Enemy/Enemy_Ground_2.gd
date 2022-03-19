@@ -19,4 +19,5 @@ func _on_Area2D_body_entered(body):
 		velocity.x = 0
 		direction *= -1
 	if body.name == "Player":
+		body.do_damage(damage)
 		queue_free()

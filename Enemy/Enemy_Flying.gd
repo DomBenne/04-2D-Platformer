@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var player = false
+var player = null
 onready var ray = $RayCast2D
 export var speed = 250
 export var looking_speed = 100
@@ -8,9 +8,9 @@ export var damage = 10
 
 func _physics_process(_delta):
 	if player == null:
-		player = get_node_or_null("root/Game/Player_Container/Player")
+		player = get_node_or_null("/root/Game/Player_Container/Player")
 	else:
-		#ray.cast_to = ray.to_local(player.global_position)
+		ray.cast_to = ray.to_local(player.global_position)
 		var c = ray.get_collider()
 		if c:
 			var velocity = ray.cast_to.normalized()*looking_speed
@@ -23,3 +23,4 @@ func _physics_process(_delta):
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.do_damage(damage)
+		queue_free()

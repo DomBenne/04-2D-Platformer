@@ -1,9 +1,11 @@
 extends Node2D
 
-onready var Bat = load("res://Enemy/Bat.tscn")
+onready var Enemy_Ground = load("res://Enemy/Enemy_Ground.tscn")
 
-func _physics_process(_delta):
-	if not has_node("Bat"):
-		var bat = Bat.instance()
-		add_child(bat)
-		bat.name = 'Bat'
+
+func spawn(e_type, p):
+	var enemy = null
+	if e_type == "Enemey_Ground":
+		enemy = Enemy_Ground.instance()
+	enemy.position = p
+	add_child(enemy)
